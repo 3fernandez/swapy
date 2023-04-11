@@ -14,7 +14,7 @@
   mix setup
   ```
 
-3. Well, there's some tests indeed(not as much as I'd love to) and to see them, please run:
+3. Well, there're some tests indeed(not as much as I'd love to) and to see them, please run:
 
   ```sh
   mix test

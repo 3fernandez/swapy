@@ -12,6 +12,8 @@ defmodule Swapy.Application do
       SwapyWeb.Telemetry,
       # Start our Fancy key/value store
       %{id: Swapy.FancyStore, start: {Swapy.FancyStore, :start_link, []}},
+      # Start our Fancy Job Scheduler
+      Swapy.FancyJobScheduler,
       # Start the PubSub system
       {Phoenix.PubSub, name: Swapy.PubSub},
       # Start the Endpoint (http/https)

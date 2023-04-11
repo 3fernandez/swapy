@@ -46,7 +46,6 @@ defmodule Swapy.FancyJobScheduler do
   defp set_countdown_timer() do
     # The send_after/3 fn accepts interval in ms as the 3rd arg, 
     # and that's why I'm using the formula hr * min * secs * ms.
-    # Process.send_after(self(), :process_job, @time_interval * 60 * 60 * 1000)
-    Process.send_after(self(), :process_job, 15_000)
+    Process.send_after(self(), :process_job, @time_interval * 60 * 60 * 1000)
   end
 end

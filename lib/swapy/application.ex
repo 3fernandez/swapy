@@ -10,6 +10,8 @@ defmodule Swapy.Application do
     children = [
       # Start the Telemetry supervisor
       SwapyWeb.Telemetry,
+      # Start our Fancy key/value store
+      %{id: Swapy.FancyStore, start: {Swapy.FancyStore, :start_link, []}},
       # Start the PubSub system
       {Phoenix.PubSub, name: Swapy.PubSub},
       # Start the Endpoint (http/https)

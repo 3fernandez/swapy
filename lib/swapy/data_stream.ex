@@ -8,6 +8,7 @@ defmodule Swapy.DataStream do
 
   @endpoint "https://api.github.com/repos"
   @params %{state: "all", per_page: "100"}
+  @webhook_address "https://webhook.site/4596c005-3918-434b-84b8-3cf4904e40a7"
 
   def new(resource_path) do
     Stream.resource(
@@ -15,6 +16,10 @@ defmodule Swapy.DataStream do
       &process_page/1,
       &done/1
     )
+  end
+
+  def send_issues(body) do
+    http_client().post(@webhook_address, Jason.encode!(body))
   end
 
   defp fetch_page(resource_path) do

@@ -7,5 +7,7 @@ defmodule SwapyWeb.Router do
 
   scope "/api", SwapyWeb do
     pipe_through :api
+
+    post "/process_issues", MainController, :create
   end
 end
